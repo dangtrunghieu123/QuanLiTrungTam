@@ -1,0 +1,191 @@
+<div class="toLeft">
+  <section class="Content">
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-lg-3">
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal" style="width:80%;font-size:20px;">
+            <span>Add Course</span>
+            <i class="fa fa-plus mt-1" style="float: right;"></i>
+          </button>
+          
+        </div>
+        <div class="col-lg-9 search">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="Content mt-3">
+  
+    <div class="container">
+      <div class="container py-2">
+        <h1 style="background:blueviolet;margin:15px 0;padding:12px;color:white;font-weight: 250">List Course</h1>
+      </div>
+      <table class="table bg-white">
+        <thead class="text-center">
+          <th>Image</th>
+          <th>Name Course</th>
+          <th>Discrible</th>
+          <th>Create Author</th>
+          <th>Manipulation</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of listCourse | paginate: { itemsPerPage: 6, currentPage: p }">
+            <td >
+              <img [src]="course.HinhAnh" style="width:200px;height:300px">
+              <p > code: {{course.MaKhoaHoc}} </p>
+              <p style="line-height: -10px;background:1px solid green " >
+                <span>evaluate : {{course.LuotXem}} </span>
+                <i class="fa fa-star text-warning"></i>
+              </p>
+  
+            </td>
+            <!-- <td>{{course.MaKhoaHoc}}</td> -->
+            <td>{{course.TenKhoaHoc}}</td>
+            <td>{{course.MoTa}}</td>
+            <td>{{course.NguoiTao}}</td>
+            <td class="text-center">
+              <button class="btn btn-primary" [routerLink]="['/detail',course.MaKhoaHoc]">View</button>
+              <button class="btn btn-success"
+              #EDIT
+                [attr.data-img] = "course.HinhAnh"
+                [attr.data-code]="course.MaKhoaHoc"
+                [attr.data-name] = "course.TenKhoaHoc"
+                [attr.data-view] = "course.LuotXem"
+                [attr.data-des] = "course.MoTa"
+                [attr.data-author] = "course.NguoiTao"
+              (click)="edit(EDIT)"  type="button"  data-toggle="modal" data-target="#Modal"
+              >Edit</button>
+              <button class="btn btn-danger" (click)="DELETE(course.MaKhoaHoc)">Del</button>
+            </td>
+  
+          </tr>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  
+</div>
+
+<!-- Button to Open the Modal -->
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 #add class="modal-title">ADD COURSE</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="formAddCourse">
+          <div class="form-group">
+            <label>IDCourse</label>
+            <input class="form-control" formControlName="MaKhoaHoc">
+          </div>
+          <div class="form-group">
+            <label>Name course</label>
+            <input class="form-control" formControlName="TenKhoaHoc">
+          </div>
+          <div class="form-group">
+            <label>Image</label>
+            <input class="form-control" formControlName="HinhAnh">
+          </div>
+          <div class="form-group">
+            <label>Describe</label>
+            <input class="form-control" formControlName="MoTa">
+          </div>
+          <div class="form-group">
+            <label>View</label>
+            <input class="form-control" formControlName="LuotXem">
+          </div>
+          <div class="form-group">
+            <label>Author create</label>
+            <select class="form-control" formControlName="NguoiTao">
+              <option *ngFor="let author of listCourse">{{author.NguoiTao}}</option>
+            </select>
+          </div>
+          <!-- <div class="form-group text-center">
+            <button class="btn btn-primary" type="button" (click)="addCourse()">ADD</button>
+            <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+          </div> -->
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer ">
+          <div class=" text-center">
+              <button class="btn btn-primary" type="button" (click)="addCourse()">ADD</button>
+              <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+            </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="Modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 #add class="modal-title">EDIT COURSE</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form [formGroup]="formEditCourse">
+            <div class="form-group">
+              <label>IDCourse</label>
+              <input class="form-control" disabled formControlName="MaKhoaHoc">
+            </div>
+            <div class="form-group">
+              <label>Name course</label>
+              <input class="form-control" formControlName="TenKhoaHoc">
+            </div>
+            <div class="form-group">
+              <label>Image</label>
+              <input class="form-control" formControlName="HinhAnh">
+            </div>
+            <div class="form-group">
+              <label>Describe</label>
+              <input class="form-control" formControlName="MoTa">
+            </div>
+            <div class="form-group">
+              <label>View</label>
+              <input class="form-control" formControlName="LuotXem">
+            </div>
+            <div class="form-group">
+              <label>Author create</label>
+              <select class="form-control" formControlName="NguoiTao">
+                <option *ngFor="let author of listCourse">{{author.NguoiTao}}</option>
+              </select>
+            </div>
+            <!-- <div class="form-group text-center">
+              <button class="btn btn-primary" type="button" (click)="addCourse()">ADD</button>
+              <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+            </div> -->
+          </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer ">
+            <div class=" text-center">
+                <button class="btn btn-primary" type="button" (click)="editCourse()">EDIT</button>
+                <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+              </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,67 @@
+.listCourse{
+    margin-top:50px;
+    background: rgba(212, 21, 212, 1);
+    height:630px;
+    /* width: 100%; */
+    transform: skewy(-3deg);
+    
+}
+/* .Content{
+    position: relative;
+    height:200px;
+} */
+.Course{
+    /* position: absolute;
+    top:100px; */
+    transform: skewY(4deg);
+    font-size:30px;
+}
+
+
+.row1 h1{
+    /* margin-top:30px; */
+    color:blue;
+    position: relative;
+    width: 25%;
+}
+.row1 h1:after{
+    content: '';
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 100%;
+    height:2px;
+    background: blue;
+    animation: transition 3s linear infinite;
+
+}
+
+@keyframes transition{
+    0%{
+        width: 0;
+      
+    }
+    50%{
+        width: 100%;
+       
+    }
+    100%{
+        width: 0;
+        right:0;
+        left:auto;
+    }
+}
+
+.backGround{
+    /* margin-top:-35px; */
+    background: url("../../../assets/img/image.jpg");
+    height: 400px;
+    width: 100%;
+    background-attachment: fixed;
+    background-size:cover;
+    transform: skewy(-3deg);
+}
+
+#course_P{
+    z-index: 100;
+}

@@ -1,0 +1,44 @@
+<section class="bg-light">
+  <div class="header">
+    <p>Wellcome to CyberSoft Academy</p>
+    <ul>
+      <li style=" " *ngIf="!status;else show">
+        <a href="#" routerLink="/login" style="border-right:1px solid gray;padding-right:25px">Login/Signout</a>
+      </li>
+      <ng-template #show>
+        <li >
+          <div class="dropdown">
+            <div class=" dropdown-toggle px-3"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <span>chào, {{name.TaiKhoan}}</span>
+          </div>
+           
+            <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">your account</button>
+                <button class="dropdown-item" type="button">edit your account</button>
+                <button class="dropdown-item" type="button" (click)="Remove()">sign out</button>
+              </div>
+          </div>
+        
+        </li>
+      </ng-template>
+   
+      <li></li>
+      <li>
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-skype"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

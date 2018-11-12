@@ -1,0 +1,27 @@
+<section id="particles-js">
+    <div class="fromLogin">
+        <div class="Content">
+            <div>
+                <div class="normal text-center bg-primary py-1" style="cursor: pointer;">Login normal</div>
+                <div class="fb text-center bg-success py-1">
+                    <i class="fa fa-facebook"></i>
+                </div>
+            </div>
+
+            <form class="" [formGroup]="formLogin">
+                <div class="form-group">
+                    <label>Account</label>
+                    <input type="text" class="form-control" formControlName="TaiKhoan">
+                </div>
+                <div class="form-group">
+                    <label>PassWord</label>
+                    <input type="text" class="form-control" formControlName="MatKhau">
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-danger my-3" style="width: 100%; font-size:25px" type="button" (click)="Login()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>

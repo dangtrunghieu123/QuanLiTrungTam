@@ -1,0 +1,60 @@
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 0;
+}
+.logo img{
+    height: 60px;
+
+}
+.avar img{
+    width: 60px;
+    height:60px;
+    border-radius:50%;
+}
+.avar {
+    display:flex;
+    align-items: center;
+}
+
+.menu{
+    background:#f9f9fc;
+   
+}
+.menu ul{
+    display:flex;
+    align-items: center;
+    
+}
+.menu ul li{
+    list-style:none;
+    width: 23%;
+    text-align: center;
+    padding:10px 0;
+    /* border-right:1px solid gray; */
+}
+.menu ul li a{
+    text-decoration: none;
+    cursor: pointer;
+    color:black;
+    font-size:20px;
+}
+.menu ul li a i{
+    color:#464de4;
+    font-size:25px;
+    padding:10px;
+    border:1px solid #464de4;
+    margin-right:10px;
+}
+.menu ul li:hover{
+    background: #DDDDDD;
+}
+.active{
+    background: #DDDDDD;
+}
+/* Content */
+
+
+/* Course Manager */
+

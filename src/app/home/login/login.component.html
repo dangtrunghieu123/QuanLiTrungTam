@@ -1,0 +1,146 @@
+<section class="lg">
+    <div class="container">
+        <h1 class=" text-primary">Well come to our Class</h1>
+        <p class="text-center" style="color:gray;font-size:20px">Professional Creative and Dynamic</p>
+        <div class="Form mt-4">
+            <div class="in_out text-center">
+                <button class="btn btn-primary px-5 mr-3" (click)="show()">Login</button>
+                <button class="btn btn-success px-4 " (click)="hide() ">Registration</button>
+
+            </div>
+            <!-- <form action="" class="formLogin" [formGroup]="formLogin"  *ngIf="status;else formRegistration">
+                <div class="img">
+                    <img src="../../../assets/img/login.jpg" alt="">
+                    <div class="hoverImg">
+                        <h1>Hello you</h1>
+                    </div>
+                </div>
+                <div class="form-group mx-4 account mt-5">
+                  
+                    <input type="text" formControlName="TaiKhoan" class="txtF">
+                   <div *ngIf="formLogin.get('TaiKhoan').invalid && formLogin.get('TaiKhoan').touched">
+                        <div *ngIf="formLogin.get('TaiKhoan').errors['required']" class="alert alert-danger">
+                            please check your account again
+                        </div>
+                    </div> 
+                    <label for="" >Account</label>
+
+                </div>
+                <div class="form-group mx-4 pass mt-4">
+                    <input type="password" class=" txtF" id="test" formControlName="MatKhau">
+                    <label for="" >PassWord</label>
+                </div>
+                <div class="form-group text-center">
+                    <button type="button" class="btn btn-danger px-4 my-3" (click)="LoginSubmit()" >Login</button>
+                </div>
+            </form> -->
+            <!-- <ng-template #formRegistration>
+                    <form action="" class="formReg" [formGroup]="formReg" >
+                        <div class="form-group mx-4 account mt-5">
+                            <input type="text" formControlName="TaiKhoan" class="txtF">
+                            <label for="">Account</label>
+    
+                        </div>
+                        <div class="form-group mx-4 pass mt-4">
+                            <input type="password" class=" txtF" formControlName="MatKhau">
+                            <label for="">PassWord</label>
+                        </div>
+                        <div class="form-group mx-4 name mt-4">
+                            <input type="text" formControlName="HoTen" class="txtF">
+                            <label for="">Name</label>
+                        </div>
+                        <div class="form-group mx-4 email mt-4">
+                            <input type="email" formControlName="Email" class="txtF">
+                            <label for="">Email</label>
+                        </div>
+                        <div class="form-group mx-4 phone mt-4">
+                            <input type="text" class="txtF " formControlName="SoDT">
+                            <label for="">PhoneNumber</label>
+                        </div>
+    
+                         <div class="form-group mx-4 codeUser mt-4">
+                            <input type="text" class=" " formControlName="codeUser">
+                            <label for="">CodeUser</label>
+                        </div>
+                        <div class="form-group mx-4 MaLoaiNguoiDung mt-4">
+                            <input type="text" class=" " formControlName="MaLoaiNguoiDung">
+                            <label for="">MaLoaiNguoiDung</label>
+                        </div> 
+                        <div class="form-group text-center">
+                            <button type="button" (click)="RegistrationSubmit()" class="btn btn-danger px-4 my-3">Registration</button>
+                        </div>
+                    </form>
+                </ng-template> -->
+            <form action="" class="formLogin" [formGroup]="formLogin" *ngIf="status;else formRegistration">
+                <div class="img">
+                    <img src="../../../assets/img/login.jpg" alt="">
+                    <div class="hoverImg">
+                        <h1>Hello you</h1>
+                    </div>
+                </div>
+                <div class="form-group mx-4 account mt-5">
+                    <label for="">Account</label>
+                    <input type="text" formControlName="TaiKhoan" class="txtF form-control">
+                    <div *ngIf="formLogin.get('TaiKhoan').invalid && formLogin.get('TaiKhoan').touched">
+                        <div *ngIf="formLogin.get('TaiKhoan').errors['required']" class="alert alert-danger">
+                            please check your account again
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="form-group mx-4 pass ">
+                    <label for="">PassWord</label>
+                    <input type="password" class=" txtF form-control" id="test" formControlName="MatKhau">
+
+                </div>
+                <div class="form-group text-center">
+                    <button type="button" class="btn btn-danger px-4 my-3" (click)="LoginSubmit()">Login</button>
+                </div>
+            </form>
+            <ng-template #formRegistration>
+                <form action="" class="formReg" [formGroup]="formReg">
+                    <div class="form-group mx-4 account mt-5">
+                        <label for="">Account</label>
+                        <input type="text" formControlName="TaiKhoan" class="txtF form-control">
+
+
+                    </div>
+                    <div class="form-group mx-4 pass ">
+                        <label for="">PassWord</label>
+                        <input type="password" class=" txtF form-control" formControlName="MatKhau">
+
+                    </div>
+                    <div class="form-group mx-4 name ">
+                        <label for="">Name</label>
+                        <input type="text" formControlName="HoTen" class="txtF form-control">
+
+                    </div>
+                    <div class="form-group mx-4 email">
+                        <label for="">Email</label>
+                        <input type="email" formControlName="Email" class="txtF form-control">
+
+                    </div>
+                    <div class="form-group mx-4 phone ">
+                        <label for="">PhoneNumber</label>
+                        <input type="text" class="txtF form-control" formControlName="SoDT">
+
+                    </div>
+
+                    <!-- <div class="form-group mx-4 codeUser mt-4">
+                        <input type="text" class=" " formControlName="codeUser">
+                        <label for="">CodeUser</label>
+                    </div>
+                    <div class="form-group mx-4 MaLoaiNguoiDung mt-4">
+                        <input type="text" class=" " formControlName="MaLoaiNguoiDung">
+                        <label for="">MaLoaiNguoiDung</label>
+                    </div>  -->
+                    <div class="form-group text-center">
+                        <button type="button" (click)="RegistrationSubmit()" class="btn btn-danger px-4 my-3">Registration</button>
+                    </div>
+                </form>
+            </ng-template>
+
+        </div>
+    </div>
+</section>

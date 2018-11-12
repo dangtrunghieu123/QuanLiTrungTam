@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin:0;
+    padding:0;
+}
+
+#course_P .owl-prev{
+    position: absolute;
+   top:25%;
+   left:-50px;
+   font-size:90px;
+   color:blue;
+ }
+ #course_P .owl-next{
+    position: absolute;
+    top:25%;
+   right:-40px;
+    font-size:90px;
+     height:10px;
+   color:blue;
+ }
+ /* #course_P .owl-dots .owl-dot{
+   position: absolute;
+   top:100%;
+   left:50%;
+  height:20px;
+  width: 30px;
+
+border: 1px solid green;
+ } */
+ .owl-dots{
+   text-align: center;
+
+ }
+ #course_P .owl-dot{
+  width: 30px;height:5px;
+  background: blue;
+  margin-right:20px;
+ }
+ /* #course_P .owl-dot .active{
+  
+  background: #e09422;
+  margin-right:20px;
+ } */
+ /* .owl-dots .owl-dot .active{
+  background: #e09422;
+  width: 30px;
+  height:5px;
+  transition: all 0.5s;
+  
+} */
+
+ /* .owl-dots .owl-dot  {
+  background: #e09422;
+  font-size:30px;
+  width: 30px;
+  height:5px;
+} */
+/* .owl-dots .owl-dot .active span {
+  background: #e09422;
+  font-size:30px;
+  width: 30px;
+  height:5px;
+}
+.owl-dots .owl-dot span {
+  background: #e09422;
+  font-size:30px;
+  width: 30px;
+  height:5px;
+} */

@@ -1,0 +1,44 @@
+.Content{
+    background: #CCFFFF;
+}
+.Content .search input{
+    border-radius: 30px;
+    outline:none;
+    border: none;
+}
+/*list*/
+.list{
+    margin-top:20px;
+    background: #CCFFFF;
+}
+
+/* //animation */
+.move{
+    animation:toRight 0.5s ease-in-out;
+}
+@keyframes toRight{
+    0%{
+        transform:translateX(1000px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+
+.courseTop{
+    animation: toleft 2s ease-in-out;
+}
+@keyframes toleft{
+    0%{
+        transform:translateY(1000px);
+    }
+    40%{
+        transform:translateY(1000PX);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+.userTop{
+    animation: toleft 3.5s ease-in-out;
+}

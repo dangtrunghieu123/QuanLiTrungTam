@@ -1,0 +1,25 @@
+.left img{
+    height: 500px;
+}
+
+ .Hover{
+        width:100%;
+        height:96%;
+        overflow: hidden;
+  }
+  .Hover img{
+    height:100%;
+    width:100%;
+    transition:all 1s;
+  }
+  .Hover img:hover{
+      transform: scale(1.2);
+      transition:1s;
+  }
+
+  .slider{
+      z-index: 100;
+  }
+  #owl-left{
+      z-index: 0;
+  }

@@ -1,0 +1,24 @@
+<div class="card mt-4" *ngIf="status">
+  <img [src]="itemCourse.HinhAnh" class="img-fluid">
+  <div class="card-body ">
+    <h4 class="nameCourse">
+      <a href="#" class="text-center">
+        {{name}}
+      </a>
+    </h4>
+    <p>By {{itemCourse.NguoiTao}}</p>
+    <p>Price $999</p>
+    <p>View  {{itemCourse.LuotXem}}</p>
+    <!-- <p>
+      <span>
+        <i class="fa fa-street-view view"></i> {{itemCourse.LuotXem}}</span>
+        <button class="btn btn-success mb-3">
+          <span>
+            <i class="fa fa-shopping-cart iLast"></i>
+          </span>
+        </button>
+        
+    </p> -->
+    <button class="btn btn-success" style="width:100%" [routerLink]="['/detail',itemCourse.MaKhoaHoc]">View More</button>
+  </div>
+</div>

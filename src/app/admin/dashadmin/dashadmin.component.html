@@ -1,0 +1,72 @@
+<div class="move">
+
+  <section class="Content">
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-lg-3">
+          <button class="btn btn-primary" style="width:80%;font-size:20px;">
+            <span>My Class</span>
+          </button>
+        </div>
+        <div class="col-lg-9 search">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="list">
+    <div class="container">
+      <!-- course -->
+      <div class="row courseTop">
+        <div class="col-12">
+          <h1 style="background:blueviolet	;margin:10px 0;padding:12px;color:white;font-weight:250;">List Course</h1>
+          <div class="row">
+
+            <div class="owl-carousel" id="course_admin">
+              <div *ngFor="let Course of listCourse ">
+                <div class="item">
+
+                  <app-courseitem [itemCourse]="Course"></app-courseitem>
+
+                </div>
+              </div>
+            </div>
+            <!-- <pagination-controls (pageChange)="q = $event"></pagination-controls> -->
+          </div>
+        </div>
+      </div>
+      <!-- user -->
+      <div class="row mt-4 userTop">
+        <div class="col-lg-12">
+          <h1 style="background:blueviolet;margin:15px 0;padding:12px;color:white;font-weight: 250">List Course</h1>
+          <table class="table bg-white">
+            <thead>
+              <th>Account</th>
+              <th>PassWord</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Name User</th>
+              <th>manipulation</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of listUser | paginate: { itemsPerPage: 8, currentPage: p }">
+                <td>{{user.TaiKhoan}}</td>
+                <td>{{user.MatKhau}}</td>
+                <td>{{user.HoTen}}</td>
+                <td>{{user.Email}}</td>
+                <td>{{user.TenLoaiNguoiDung}}</td>
+                <td>
+                  <button class="btn btn-primary" [routerLink]="['/detailUser',user.TaiKhoan]">View More</button>
+                </td>
+              </tr>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

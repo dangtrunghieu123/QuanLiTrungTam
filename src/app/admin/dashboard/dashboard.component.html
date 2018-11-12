@@ -1,0 +1,55 @@
+<section class="">
+  <div class="container bg-white">
+    <div class="top">
+      <div class="logo">
+        <img src="../../../assets/img/logo.png">
+      </div>
+      <div class="avar">
+        <div class="btn-group">
+          <div class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hello, {{nameTeacher.TaiKhoan}}
+          </div>
+          <div class="dropdown-menu dropdown-menu-right">
+            <button class="dropdown-item" type="button"  [routerLink]="['/detailUser',nameTeacher.TaiKhoan]">your account</button>
+            <button class="dropdown-item" type="button">edit your account</button>
+            <button class="dropdown-item" type="button" (click)="singout()">sign out</button>
+          </div>
+        </div>
+
+        <div style="margin-left:30px;">
+          <img src="../../../assets/img/avartar.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <ul id="myActive">
+        <li class=" act active">
+          <a href="#" routerLink="/admin/dashboard">
+            <i class="fa fa-connectdevelop"></i>Dashboard</a>
+        </li>
+        <li class="act">
+          <a href="#" routerLink="/admin/dashboard/course">
+            <i class="fa fa-eraser"></i> Course Manager</a>
+        </li>
+        <li class="act">
+          <a href="#" routerLink="/admin/dashboard/user">
+            <i class="fa fa-user" style="padding:10px 18px"></i> User Manager</a>
+        </li>
+        <li class="act">
+          <a href="#" routerLink="/admin/dashboard/enroll">
+            <i class="fa fa-connectdevelop"></i>Enroll Manager</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<section>
+  <!-- <div class="container">
+    <app-managecourse></app-managecourse>
+    <app-manageuser></app-manageuser>
+    <app-enroll></app-enroll>
+    
+  </div> -->
+  <router-outlet></router-outlet>
+</section>

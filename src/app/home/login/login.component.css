@@ -1,0 +1,73 @@
+.lg{
+    z-index: 200;
+    position: absolute;
+    top:0;
+    right:-45%;
+    width: 500px;
+    height: 100%;
+    background: white;
+    overflow: scroll;
+}
+
+.Form{
+    
+    /* padding-left:30px; */
+    padding-top:20px;
+    border:1px solid gray;
+    width: 90%;
+}
+
+/* .formLogin label,.formReg label{
+    position: absolute;
+    top:-5px;
+    left:0;
+    transition: all 0.3 linear;
+    font-size:20px;
+}
+.formLogin .account,.formLogin .pass, .formReg .account,.formReg .pass, .formReg .name, .formReg .email, .formReg .phone{
+    position: relative;
+}
+
+.formLogin input, .formReg input{
+    border:0;
+    border-bottom:1px solid green;
+    width: 100%;
+    outline: none;
+
+}
+.formLogin input:focus ~ label,.formReg input:focus ~ label{
+    transform: translateY(-20px);
+    font-size:15px;
+    color:orange;
+} */
+.img{
+    width:100%;
+    text-align: center;
+    position: relative;
+    height:200px;
+}
+.img img{
+    padding-top:20px;
+    width:90%;
+    height:100%;
+}
+.img:hover .hoverImg{
+    display: block;
+}
+.hoverImg{
+    display: none;
+    position: absolute;
+    top:10%;
+    left:5%;
+    width: 90%;
+    height:90%;
+    background: rgba(0,0,0,0.7);
+}
+.hoverImg h1{
+    color:white;
+    text-align: center;
+    position: absolute;
+    top:27%;
+    left:25%;
+}
+

@@ -1,0 +1,103 @@
+<section class="Content">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-lg-4 leftToRight">
+        <!-- left -->
+        <div class="left ">
+          <div class="clip">
+              <img src="../../../assets/img/avartar.jpg">
+          </div>
+          <div class="top">
+            <p class="pt-3 text-primary">Name : {{DetailUser.HoTen}}</p>
+            <p>Position: {{DetailUser.TenLoaiNguoiDung}}</p>
+          </div>
+          <div class="bottom">
+            <div class="info" (click)="show()">
+              <i class="fa fa-at mx-3"></i>Information</div>
+            <div class="course" (click)="hide()">
+              <i class="fa fa-eraser mx-3"></i>Course enrolled</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <!-- right -->
+        <div class="right bg-white">
+          <!-- information -->
+          <div class="SomeInfor mx-3" *ngIf="status;else SCourse">
+            <h1>Some Information</h1>
+            <div class="Main_info">
+              <p>
+                <i class="fa fa-database"></i>
+                <span>Account: {{DetailUser.TaiKhoan}}</span>
+              </p>
+              <p>
+                <i class="fa fa-expeditedssl"></i>
+                <span>Pass: {{DetailUser.MatKhau}}</span>
+              </p>
+              <p>
+                <i class="fa fa-user pr-4" style="font-size:35px;"></i>
+                <span>Full Name: {{DetailUser.HoTen}}</span>
+              </p>
+              <p>
+                <i class="fa fa-envelope"></i>
+                <span>Email: {{DetailUser.Email}}</span>
+              </p>
+              <p>
+                <i class="fa fa-code"></i>
+                <span>CodeUser: {{DetailUser.MaNguoiDung}} </span>
+              </p>
+              <p>
+                <i class="fa fa-connectdevelop"></i>
+                <span>NameUser: {{DetailUser.TenLoaiNguoiDung}}</span>
+              </p>
+              <p style="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique iusto nesciunt sunt quis vitae, possimus
+                qui perferendis deleniti quam inventore amet obcaecati earum fugit asperiores, vel exercitationem doloremque
+                odio saepe temporibus? Sapiente, quia? Delectus eligendi libero ab quaerat repellendus temporibus consectetur
+                sed alias quis? Tempora impedit minus qui molestias? Velit.</p>
+            </div>
+            <div class="divContact">
+              <p style="font-size:30px;color:green;padding-left:20px;">Contact</p>
+              <div class="contact">
+                <div style="background:blue;padding:10px 20px;">
+                  <a>
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </div>
+                <div style="background:orangered;padding:10px 15px;">
+                  <a>
+                    <i class="fa fa-skype"></i>
+                  </a>
+                </div>
+                <div style="background:yellow;padding:10px 13px;">
+                  <a>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </div>
+                <div style="background:green;padding:10px 15px">
+                  <a>
+                    <i class="fa fa-github-square"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- course have been enrolled -->
+          <ng-template #SCourse>
+              <div class="SomeCourse">
+                  <h1>Course have been enrolled</h1>
+                  <div class="listCourse mt-3">
+                    <div class="card">
+                      <!-- <img src=""> -->
+                      <div class="card-body">
+                        thu óc chó
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </ng-template>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

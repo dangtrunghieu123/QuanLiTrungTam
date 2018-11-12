@@ -1,0 +1,31 @@
+.movie__item img{
+    width: 100%;
+    border-radius: 5px;
+}
+.movie__item p{
+    font-size:18px;
+    margin:15px;
+}
+.movie__item button{
+    background-color:#fa5238;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    display: block;
+    width: 100%;
+    font-size:20px;
+    border-radius: 5px;
+    display: none;
+    margin-top:10px;
+   
+}
+.movie__item:hover button{
+    display: block;
+}
+.movie__item:hover p{
+    display: none;
+}
+img{
+    width:100%;
+    height:200px;
+}

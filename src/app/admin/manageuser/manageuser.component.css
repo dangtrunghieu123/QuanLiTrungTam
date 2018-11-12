@@ -1,0 +1,21 @@
+.Content{
+    background: #CCFFFF;
+}
+.Content .search input{
+    border-radius: 30px;
+    outline:none;
+    border: none;
+}
+
+/* animation */
+.toLeft{
+    animation: toleft 1s ease-in-out;
+}
+@keyframes toleft{
+    0%{
+        transform: translateX(1000px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,170 @@
+<div class="toLeft">
+  <section class="Content">
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-lg-3">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#addUser" style="width:80%;font-size:20px;">
+            <span>Add Course</span>
+            <i class="fa fa-plus mt-1" style="float: right;"></i>
+          </button>
+        </div>
+        <div class="col-lg-9 search">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Content mt-3">
+    <div class="container py-2">
+      <h1 style="background:blueviolet;margin:15px 0;padding:12px;color:white;font-weight: 250">List User</h1>
+    </div>
+    <div class="container">
+      <table class="table bg-white">
+        <thead class="text-center">
+          <th>Account</th>
+          <th>PassWord</th>
+          <th>Full Name</th>
+          <th>Name User</th>
+          <th>Manipulation</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of listUser | paginate: { itemsPerPage: 8, currentPage: p }">
+            <td>{{user.TaiKhoan}}</td>
+            <td>{{user.MatKhau}}</td>
+            <td>{{user.HoTen}}</td>
+            <td>{{user.TenLoaiNguoiDung}}</td>
+            <td class="text-center">
+              <button class="btn btn-primary" [routerLink]="['/detailUser',user.TaiKhoan]">View</button>
+              <button #EDIT class="btn btn-success" data-toggle="modal" data-target="#editUser" [attr.data-phone]="user.SoDT" [attr.data-account]="user.TaiKhoan"
+                [attr.data-email]="user.Email" [attr.data-nameUser]="user.TenLoaiNguoiDung" [attr.data-pass]="user.MatKhau"
+                [attr.data-name]="user.HoTen"  (click)="edit(EDIT)">Edit</button>
+              <button class="btn btn-danger" (click)="DELETE(user.TaiKhoan)">Del</button>
+            </td>
+
+          </tr>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- modal -->
+
+<div class="modal" id="addUser">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 #add class="modal-title">ADD USER</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="formAddUser">
+          <div class="form-group">
+            <label>Account</label>
+            <input type="text" class="form-control" formControlName="TaiKhoan">
+          </div>
+          <div class="form-group">
+            <label>PassWord</label>
+            <input type="password" class="form-control" formControlName="MatKhau">
+          </div>
+          <div class="form-group">
+            <label>HoTen</label>
+            <input type="text" class="form-control" formControlName="HoTen">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="Email">
+          </div>
+          <div class="form-group">
+            <label>SoDT</label>
+            <input type="text" class="form-control" formControlName="SoDT">
+          </div>
+          <div class="form-group">
+            <label>Position</label>
+            <select class="form-control" formControlName="MaLoaiNguoiDung">
+              <option value="HV">Học Viên</option>
+              <option value="GV" >Giáo Vụ</option>
+            </select>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer ">
+        <div class=" text-center">
+          <button class="btn btn-primary" type="button" (click)="addUser()">ADD</button>
+          <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="editUser">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 #add class="modal-title">EDIT USER</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="formEditUser">
+          <div class="form-group">
+            <label>Account</label>
+            <input type="text" disabled class="form-control" formControlName="TaiKhoan">
+          </div>
+          <div class="form-group">
+            <label>PassWord</label>
+            <input type="password" class="form-control" formControlName="MatKhau">
+          </div>
+          <div class="form-group">
+            <label>HoTen</label>
+            <input type="text" class="form-control" formControlName="HoTen">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="Email">
+          </div>
+          <div class="form-group">
+            <label>SoDT</label>
+            <input type="text" class="form-control" formControlName="SoDT">
+          </div>
+          <div class="form-group">
+            <label>Position</label>
+            <select class="form-control" formControlName="MaLoaiNguoiDung">
+              <option value="HV">Học Viên</option>
+              <option value="GV">Giáo Vụ</option>
+            </select>
+          </div>
+
+          <!-- <div class="form-group text-center">
+                <button class="btn btn-primary" type="button" (click)="addCourse()">ADD</button>
+                <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+              </div> -->
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer ">
+        <div class=" text-center">
+          <button class="btn btn-primary" type="button" (click)="editUser()">EDIT</button>
+          <button type="button" class="btn btn-danger px-2" data-dismiss="modal">CLOSE</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
