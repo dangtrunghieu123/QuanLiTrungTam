@@ -23,3 +23,23 @@
   #owl-left{
       z-index: 0;
   }
+.sliderHide{
+    display: none;
+}
+  /* responsive */
+  @media screen and (max-width: 800px){
+    .left img{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 600px){
+    .left img{
+        /* height: 300px; */
+    }
+    .sliderShow{
+        display: none;
+    }
+    .sliderHide{
+        display: block;
+    }
+}

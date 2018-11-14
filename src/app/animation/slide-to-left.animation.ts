@@ -6,9 +6,10 @@ export const slideToLeftAnimation = trigger('slideToLeftAnimation', [
         position: 'fixed',
         top: 0,
         left: 0,
-        right: '30%',
+        right: '35%',
         bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.8)'
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+       
     })),
     transition(':enter', [
         style({
@@ -22,8 +23,13 @@ export const slideToLeftAnimation = trigger('slideToLeftAnimation', [
         }))
     ]),
     transition(':leave', [
-        animate('1s ease-in-out', style({
+        style({
+           
             right: '30%',
+            backgroundColor: 'rgba(0, 0, 0, 0)'
+        }),
+        animate('3s ease-in-out', style({
+            right: '-200%',
             backgroundColor: 'rgba(0, 0, 0, 0)'
         }))
     ])

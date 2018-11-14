@@ -31,3 +31,35 @@
 .dropdown-toggle::after{
     margin-left:20px;
 }
+
+/* responsive */
+.resLogin{
+    display: none;
+
+}
+.resLogin a{
+    color:gray;
+    text-decoration: none;
+}
+.resp_600{
+    display: none;
+    text-align: center;
+    padding:10px 0;
+  
+}
+@media screen and (max-width: 840px){
+    .resLogin{
+        display: block;
+    }
+    .header >ul{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    .resp_600{
+        display: block;
+    }
+    .header{
+        display: none;
+    }
+}

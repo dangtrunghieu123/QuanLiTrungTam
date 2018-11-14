@@ -26,8 +26,10 @@ export class DetailcourseComponent implements OnInit {
             this.DetailCourse = DetailResult;
             console.log(this.DetailCourse);
             console.log(this.DetailCourse.TenKhoaHoc);
+            // this.Registration(this.IDCourse);
           }
         )
+
 
       },
       (error) => {
@@ -39,25 +41,32 @@ export class DetailcourseComponent implements OnInit {
     this.GetDetailCourse();
     // this.Registration();
   }
+ 
   Registration(val) {
     console.log(val);
     let IDCourse = JSON.parse(localStorage.getItem("IdCourse"));
     console.log(IDCourse);
     let Account = JSON.parse(localStorage.getItem("user"));
     console.log(Account.TaiKhoan);
-    this.course.EnrollCourse(Account, val).subscribe(
-      (resultLocalStorage) => {
-        console.log(resultLocalStorage);
-        swal({
-          type: 'success',
-          title: 'Enroll course successfully',
-          showConfirmButton: false,
-          timer: 1500
-        })
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+    swal({
+      type: 'success',
+      title: 'Enroll course successfully',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    // this.course.EnrollCourse(Account, val).subscribe(
+    //   (resultLocalStorage) => {
+    //     console.log(resultLocalStorage);
+    //     swal({
+    //       type: 'success',
+    //       title: 'Enroll course successfully',
+    //       showConfirmButton: false,
+    //       timer: 1500
+    //     })
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // )
   }
 }

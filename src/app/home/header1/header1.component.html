@@ -13,89 +13,112 @@
 </section>
 
 <section class="mynav">
-  <div class="container">
-    <!-- <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ul">
-          <li class="nav-item">
-            <a class="nav-link" href="#">list Course</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Promotion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact us</a>
-          </li>
-          
-        </ul>
-      </div>
-    </nav> -->
+  <div class="container navResponsive">
+
     <ul class="ul">
       <li class="">
-          
-        <a class="" href="#"><i class="fa fa-home" style="color:greenyellow"></i>Home</a>
+        <a class="" href="#">
+          <i class="fa fa-home" style="color:greenyellow"></i>Home</a>
+
+      </li>
+      <li class="li1">
+        <a class="" href="#course">
+          <i class="fa fa-eraser" style="color:orangered"></i>List Course</a>
+        <div class="hover1 animated bounceInLeft">
+          <p>all course</p>
+          <p>top favorite courses</p>
+          <p>combo course</p>
+        </div>
+      </li>
+      <li class="li1">
+        <a class="" href="#promotion">
+          <i class="fa fa-external-link-square" style="color:blue"></i>Promotion</a>
+        <div class="hover1 animated bounceInLeft">
+          <p>all course</p>
+          <p>top favorite courses</p>
+          <p>combo course</p>
+        </div>
       </li>
       <li class="">
-        <a class="" href="#"><i class="fa fa-eraser" style="color:orangered"></i>List Course</a>
+        <a class="" href="#">
+          <i class="fa fa-users" style="color:#371860"></i>About us</a>
       </li>
       <li class="">
-        <a class="" href="#"> <i class="fa fa-external-link-square" style="color:blue"></i>Promotion</a>
-      </li>
-      <li class="">
-        <a class="" href="#" ><i class="fa fa-users" style="color:#371860"></i>About us</a>
-      </li>
-      <li class="">
-        <a class="" href="#"><i class="fa fa-compress" style="color:red"></i>ConTact us</a>
+        <a class="" href="#">
+          <i class="fa fa-compress" style="color:red"></i>ConTact us</a>
       </li>
     </ul>
   </div>
-  <div class="manuIcon">
-      <ul id="navigationMenu">
-          <li>
-              <a class="home" href="#">
-                  <i class="fa fa-home" style=" background:greenyellow;padding:11px 13px;font-size:30px;"></i>
-                  <span style=" background:greenyellow;height:52px">Home</span>
-              </a>
-          </li>
-      
-          <li>
-              <a class="about" href="#">
-                  <i class="fa fa-eraser" style=" background:orangered;padding:11px;font-size:30px;"></i>
-                  <span style=" background:orangered">Course</span>
-              </a>
-          </li>
-      
-          <li>
-               <a class="services" href="#">
-                  <i class="fa fa-external-link-square" style=" background:violet;padding:11px 14px;font-size:30px;"></i>
-                  <span style=" background:violet">Promotion</span>
-               </a>
-          </li>
-      
-          <li>
-              <a class="portfolio" href="#">
-                  <i class="fa fa-users" style=" background:#371860;padding:11px;font-size:30px;"></i>
-                  <span style=" background:#371860">About</span>
-              </a>
-          </li>
-      
-          <li>
-              <a class="contact" href="#">
-                  <i class="fa fa-compress" style=" background:#b41623;padding:10px 14px;font-size:30px;"></i>
-                  <span style=" background:#b41623;height:51px">Contact</span>
-              </a>
-          </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navHeader1">
+    <a class="navbar-brand menushow" style="padding-left:30px" href="#">Menu</a>
+    <button class="navbar-toggler " style="float:right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#course">course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#promotion">promotion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">about us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">contact us</a>
+        </li>
       </ul>
+      <!-- <span class="navbar-text">
+        Navbar text with an inline element
+      </span> -->
+      <p class="loginHeader">
+        <a href="#" routerLink="/login" style="padding-right:25px">Login/Signout</a>
+      </p>
     </div>
-</section>
+  </nav>
+  <div class="manuIcon">
+    <ul id="navigationMenu">
+      <li>
+        <a class="home" href="#">
+          <i class="fa fa-home" style=" background:greenyellow;padding:11px 13px;font-size:30px;"></i>
+          <span style=" background:greenyellow;height:52px">Home</span>
+        </a>
+      </li>
 
+      <li>
+        <a class="about" href="#course">
+          <i class="fa fa-eraser" style=" background:orangered;padding:11px;font-size:30px;"></i>
+          <span style=" background:orangered">Course</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="services" href="#promotion">
+          <i class="fa fa-external-link-square" style=" background:violet;padding:11px 14px;font-size:30px;"></i>
+          <span style=" background:violet">Promotion</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="portfolio" href="#">
+          <i class="fa fa-users" style=" background:#371860;padding:11px;font-size:30px;"></i>
+          <span style=" background:#371860">About</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="contact" href="#">
+          <i class="fa fa-compress" style=" background:#b41623;padding:10px 14px;font-size:30px;"></i>
+          <span style=" background:#b41623;height:51px">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

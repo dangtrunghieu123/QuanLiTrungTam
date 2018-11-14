@@ -22,7 +22,7 @@ export class SliderComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(){
-    $('#owl-left').owlCarousel({
+    $('.owl-left').owlCarousel({
       loop:true,
       // margin:10,
       nav:false,

@@ -1,7 +1,7 @@
 <section class="bg-light">
   <div class="header">
     <p>Wellcome to CyberSoft Academy</p>
-    <ul>
+    <ul class="responHeader2">
       <li style=" " *ngIf="!status;else show">
         <a href="#" routerLink="/login" style="border-right:1px solid gray;padding-right:25px">Login/Signout</a>
       </li>
@@ -23,7 +23,6 @@
         </li>
       </ng-template>
    
-      <li></li>
       <li>
         <a href="#">
           <i class="fa fa-facebook"></i>
@@ -40,5 +39,13 @@
         </a>
       </li>
     </ul>
+    <p class="resLogin">
+      <a href="#" routerLink="/login" style="padding-right:25px">Login/Signout</a>
+    </p>
+  </div>
+  <div class="resp_600 container">
+    <p>
+      <img src="../../../assets/img/logo.png" >
+    </p>
   </div>
 </section>

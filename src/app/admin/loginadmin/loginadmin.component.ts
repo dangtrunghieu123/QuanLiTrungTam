@@ -25,7 +25,7 @@ export class LoginadminComponent implements OnInit {
   }
   validateFormLogin() {
     this.TaiKhoan = new FormControl('', [Validators.required]);
-    this.MatKhau = new FormControl('', [Validators.required]);
+    this.MatKhau = new FormControl('', [Validators.required,Validators.minLength(5), Validators.maxLength(20)]);
   }
 
   background() {

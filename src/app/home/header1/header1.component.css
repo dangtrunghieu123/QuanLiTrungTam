@@ -76,6 +76,26 @@
 .ul li{
     padding:15px 0;
 }
+.ul .li1{
+    position: relative;
+}
+.ul .li1:hover .hover1{
+    display: block;
+}
+.ul .li1 .hover1{
+    position: absolute;
+    top:100%;
+    z-index: 202;
+    font-size:20px;
+    padding:0 20px;
+    display:none;
+    width:200px;
+    background: white;
+    border:1px solid gray;
+}
+.ul li:hover a{
+    color:#00FF00;
+}
 /* manuIcon */
 #navigationMenu{
     /* z-index: 110; */
@@ -115,8 +135,50 @@
     width: 100px;
     /* transition: leave 2s linear initial; */
 }
-/* @keyframes leave{
-    0%{
-        width: ;
+.navHeader1{
+    display:none;
+}
+.navHeader1 .loginHeader{
+    display:none;
+}
+.navHeader1 .loginHeader a{
+    text-decoration: none;
+    color:gray;
+}
+@media screen and (max-width: 992px){
+    .navResponsive{
+        display: none;
     }
-} */
+    .navHeader1{
+        display:block;
+    }
+    #header2 .container .search input{
+        width:80%;
+        left:20%;
+    }
+}
+@media screen and (max-width: 800px){
+    .manuIcon{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    #header2{
+        display: none;
+    }
+    .navHeader1 .menushow{
+        display: none;
+    }
+   button{
+       background: tomato;
+   }
+  
+    .navHeader1 .loginHeader{
+        display:block;
+    }
+    .manuIcon{
+        display: none;
+    }
+}
+
+

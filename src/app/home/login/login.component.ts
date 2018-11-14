@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
   public CreateValiateFormLogin() {
     this.TaiKhoan = new FormControl(" ", [Validators.required]),
-      this.MatKhau = new FormControl(" ", [Validators.required])
+      this.MatKhau = new FormControl(" ", [Validators.required, Validators.minLength(5), Validators.maxLength(20)])
   }
   public CreateFormReg() {
     this.formReg = new FormGroup({
@@ -51,13 +51,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   }
   public CreateValiateFormRegistration() {
-    this.formReg = new FormGroup({
-      TaiKhoan: new FormControl(" ", [Validators.required]),
-      MatKhau: new FormControl(" ", [Validators.required]),
-      HoTen: new FormControl(" ", [Validators.required]),
-      Email: new FormControl(" ", [Validators.required]),
-      SoDT: new FormControl(" ", [Validators.required])
-    })
+    {
+      this.TaiKhoan = new FormControl(" ", [Validators.required]),
+        this.MatKhau = new FormControl(" ", [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+        this.HoTen = new FormControl(" ", [Validators.required]),
+        this.Email = new FormControl(" ", [Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]),
+        this.SoDT = new FormControl(" ", [Validators.required])
+    }
   }
 
   show() {
@@ -66,59 +66,60 @@ export class LoginComponent implements OnInit, AfterViewInit {
   hide() {
     this.status = false;
   }
-  
-  // LoginSubmit() {
-  //   console.log(this.formLogin.value);
-  //   this.userLogin.getListUser().subscribe(
-  //     (result) => {
-  //       for (let i in result) {
-  //         if ((result[i].TaiKhoan === this.formLogin.value.TaiKhoan)&& (result[i].MatKhau === this.formLogin.value.MatKhau) && result[i].MaLoaiNguoDung != "GV" ) {
-  //           console.log("Thu gioi qua");
-  //           console.log(result[i]);
-  //           this.userLogin.Login(this.formLogin.value).subscribe(
-  //             (ResultLogin) => {
-  //               console.log("login successfully");
-  //               swal({
-  //                 type: 'success',
-  //                 title: 'Login successfully',
-  //                 showConfirmButton: false,
-  //                 timer: 1500
-  //               })
-  //               localStorage.setItem("user", JSON.stringify(this.formLogin.value));
-  //               this.router.navigate(['/']);
-  //             },
-  //             (error) => {
-  //               console.log(error);
-  //             }
-  //           )
-  //         }
-  //         else {
-  //           console.log("thu oc cho");
-  //         }
-  //       }
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   )
 
-  // }
-  GetListUser() {
+  LoginSubmit() {
+    console.log(this.formLogin.value);
     this.userLogin.getListUser().subscribe(
       (result) => {
         for (let i in result) {
-          if (  result[i].MatKhau != null && result[i].MatKhau != "" && result[i].TaiKhoan != null && result[i].TaiKhoan != "" ) {
-            this.listUser.push(result[i]);
-            console.log(result[i].MaLoaiNguoDung);
+          if ((result[i].TaiKhoan === this.formLogin.value.TaiKhoan) && (result[i].MatKhau === this.formLogin.value.MatKhau) && result[i].MaLoaiNguoDung != "GV") {
+            console.log("Thu gioi qua");
+            console.log(result[i]);
+            this.userLogin.Login(this.formLogin.value).subscribe(
+              (ResultLogin) => {
+                console.log("login successfully");
+                swal({
+                  type: 'success',
+                  title: 'Login successfully',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                localStorage.setItem("user", JSON.stringify(this.formLogin.value));
+                this.router.navigate(['/']);
+              },
+              (error) => {
+                console.log(error);
+              }
+            )
+          }
+          else {
+            console.log("thu oc cho");
           }
         }
-        console.log(this.listUser);
       },
       (error) => {
         console.log(error);
       }
     )
+
   }
+  // GetListUser() {
+  //   this.userLogin.getListUser().subscribe(
+  //     (result) => {
+  //       for (let i in result) {
+  //         if (result[i].MatKhau != null && result[i].MatKhau != "" && result[i].TaiKhoan != null && result[i].TaiKhoan != "" && result[i].MaLoaiNguoDung != 'GV') {
+  //           this.listUser.push(result[i]);
+  //           // console.log(result[i].MaLoaiNguoDung);
+
+  //         }
+  //       }
+  //       console.log(this.listUser);
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   )
+  // }
 
   RegistrationSubmit() {
     console.log(this.formReg.value);
@@ -146,7 +147,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     //     console.log("sai roi ")
     //   }
     // }
-  
+
     this.userLogin.getListUser().subscribe(
       (resultReg) => {
         for (let i in resultReg) {
@@ -155,7 +156,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
             alert("this account really is exist!");
           }
           else {
-            console.log("ljdsljlj")
+            console.log("ljdsljlj");
+           
             // this.userLogin.Register(this.user).subscribe(
             //   (result) => {
             //     console.log(result);
@@ -171,15 +173,15 @@ export class LoginComponent implements OnInit, AfterViewInit {
             //     console.log(error);
             //   }
             // )
-
+            // setTimeout(this.register(), 5000);
           }
           // setTimeout(this.register(),100);
           // this.register();
         }
-       // this.register();
+        // this.register();
       }
     )
-
+    this.formReg.reset();
   }
   register() {
     this.userLogin.Register(this.user).subscribe(
@@ -217,11 +219,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.CreateValiateFormRegistration();
     // this.RegistrationSubmit();
     // this.login(this.user);
-    this.GetListUser();
+    // this.GetListUser();
+    
   }
   ngAfterViewInit() {
     //this.label();
     this.RegistrationSubmit();
+   
   }
 }
 
