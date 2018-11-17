@@ -1,67 +1,45 @@
-.listCourse{
-    margin-top:50px;
-    background: rgba(212, 21, 212, 1);
-    height:630px;
-    /* width: 100%; */
-    transform: skewy(-3deg);
-    
+/* skill */
+.skill{
+    padding:30px 0;
 }
-/* .Content{
-    position: relative;
-    height:200px;
-} */
-.Course{
-    /* position: absolute;
-    top:100px; */
-    transform: skewY(4deg);
+.skill img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+}
+.skill p{
+    margin:10px;
+
     font-size:30px;
 }
 
-
-.row1 h1{
-    /* margin-top:30px; */
-    color:blue;
-    position: relative;
-    width: 25%;
+.left h2{
+    font-weight:50;
+    color:black;
 }
-.row1 h1:after{
+.Tittle h1{
+    
+    font-weight:100;
+    font-size:50px;
+}
+.Tittle{
+    position: relative;
+}
+.Tittle:after{
     content: '';
     position: absolute;
     top:100%;
-    left: 0;
-    width: 100%;
-    height:2px;
+    left:0;
+    width: 15%;
+    height: 2px;
     background: blue;
-    animation: transition 3s linear infinite;
-
 }
-
-@keyframes transition{
-    0%{
-        width: 0;
-      
-    }
-    50%{
-        width: 100%;
-       
-    }
-    100%{
-        width: 0;
-        right:0;
-        left:auto;
-    }
+.left p{
+    font-size:20px;
+    color:gray;
 }
-
-.backGround{
-    /* margin-top:-35px; */
-    background: url("../../../assets/img/image.jpg");
-    height: 400px;
+.left button{
+    font-size:25px;
+    padding: 5px 20px;
     width: 100%;
-    background-attachment: fixed;
-    background-size:cover;
-    transform: skewy(-3deg);
-}
-
-#course_P{
-    z-index: 100;
 }

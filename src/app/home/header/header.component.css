@@ -1,0 +1,30 @@
+.navHeader{
+    z-index: 1;
+    
+}
+.ul1 li a{
+    color:#800080;
+    font-size:23px;
+    
+}
+.ul2 li a{
+    color:#800080;
+    font-size:23px;
+ 
+}
+
+.fixedTop{
+    font-weight:100;
+    background: #CC00CC;
+    transition: all 1s;
+    /* border-bottom:3px solid blueviolet; */
+
+}
+
+.fixedTop nav a{
+    color:white;
+}
+nav > a img{
+   width:200px;
+   height:70px;
+}

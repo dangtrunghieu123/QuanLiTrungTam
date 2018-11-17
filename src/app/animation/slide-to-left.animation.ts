@@ -3,6 +3,7 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
 export const slideToLeftAnimation = trigger('slideToLeftAnimation', [
 
     state('*', style({
+        
         position: 'fixed',
         top: 0,
         left: 0,
@@ -13,7 +14,6 @@ export const slideToLeftAnimation = trigger('slideToLeftAnimation', [
     })),
     transition(':enter', [
         style({
-           
             right: '-200%',
             backgroundColor: 'rgba(0, 0, 0, 0)'
         }),

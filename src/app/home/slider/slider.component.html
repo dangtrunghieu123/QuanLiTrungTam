@@ -1,50 +1,14 @@
-<section class="slider">
-    <div class="container">
-      <div class="row sliderShow">
-        <div class="col-8 left">
-          <div class="owl-carousel owl-theme owl-left" id="">
-            <div class="item" *ngFor="let imgItem of listSlider">
-              <img [src]="imgItem.img" class="img-fluid">
-            </div>
-          </div>
-        </div>
-        <div class="col-4 right">
-          <div class="row">
-            <div class="col-12">
-              <div class="Hover">
-                <img src="../../../assets/img/slider1.png">
-              </div>
-            </div>
-            <div class="col-12 mt-1">
-              <div class="Hover">
-                <img src="../../../assets/img/silder3.jpg">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row sliderHide">
-          <div class="col-12 left">
-            <div class="owl-carousel owl-theme owl-left" id="">
-              <div class="item" *ngFor="let imgItem of listSlider">
-                <img [src]="imgItem.img" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="col-12 right">
-            <div class="row">
-              <div class="col-6">
-                <div class="Hover">
-                  <img src="../../../assets/img/slider1.png">
-                </div>
-              </div>
-              <div class="col-5 mt-1">
-                <div class="Hover">
-                  <img src="../../../assets/img/silder3.jpg">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<section class="Slider">
+  <div class="owl-carousel owl-theme owl-left" id="sliderImg">
+    <div class="item" *ngFor="let image of listSlider">
+      <img [src]="image.src" class="img-fluid">
     </div>
-  </section>
+  </div>
+  <div class="Content">
+    <h2>CyberSoft Academy</h2>
+    <p>Chuyên gia đào tạo lập trình</p>
+    <div class="text-center">
+      <button class="btn btn-outline-danger">Subcribe</button>
+    </div>
+  </div>
+</section>

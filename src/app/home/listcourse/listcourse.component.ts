@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from '../../model/course';
 import { CourseService } from '../../service/course.service';
-import { Course } from '../../Model/course';
 import $ from 'jquery';
 declare var $:any;
 @Component({
@@ -9,50 +9,49 @@ declare var $:any;
   styleUrls: ['./listcourse.component.css']
 })
 export class ListcourseComponent implements OnInit {
-  public list:Course[]=[];
-  constructor(private CourseList:CourseService) { }
-  getList(){
-    this.CourseList.getListCourse().subscribe(
+  public list:Course[] = [];
+  constructor(private courseSV:CourseService) { }
+  GetListCourse(){
+    this.courseSV.getListCourse().subscribe(
       (result) => {
         console.log(result);
         for(let i in result){
-          if(result[i].HinhAnh != null && result[i].MaKhoaHoc != ""){
+          if(result[i].HinhAnh != null && result[i].HinhAnh != ""){
             this.list.push(result[i]);
           }
         }
         setTimeout(()=>{
           this.showOwlCarousel();
-        },100)
-      },
-      (error) => {
-        console.log(error);
+        },100);
+        console.log(this.list);
       }
     )
   }
+
   showOwlCarousel(){
     $('#course_P').owlCarousel({
       loop:true,
       margin:10,
-      // nav:true,
-      dots: true,
-      autoplay:true,
-      autoplayTimeout:3000,
-      autoplayHoverPause:true,
+      nav:true,
+      // dots: true,
+      // autoplay:true,
+      // autoplayTimeout:3000,
+      // autoplayHoverPause:true,
       responsive:{
           0:{
               items:1
           },
           600:{
-              items:3
+              items:1
           },
           1000:{
-              items:4
+              items:2
           }
       }
     })
   }
   ngOnInit() {
-    this.getList();
+    this.GetListCourse();
   }
 
 }

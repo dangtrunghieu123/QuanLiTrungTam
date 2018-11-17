@@ -1,70 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    margin:0;
-    padding:0;
-}
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 #course_P .owl-prev{
     position: absolute;
-   top:25%;
-   left:-50px;
-   font-size:90px;
-   color:blue;
+    top:-20%;
+    left:90%;
+    color: #800080;
+    font-size:90px;
+    outline: none;
  }
  #course_P .owl-next{
     position: absolute;
-    top:25%;
-   right:-40px;
+    top:-20%;
+    right:0px;
+    color:#800080;
+    font-size:90px;
+    outline: none;
+ }
+ /* #course_P .owl-dot{
+    height: 20px;
+    width: 20px;
+    background: red;
+    border-radius:50%;
+    margin-left:5px;
+   
+ }
+ #course_P .owl-dots{
+    margin-left:50%;
+    margin-top:50px;
+    margin-bottom:30px;
+ } */
+
+
+/* #carouselReview .owl-prev{
+    position: absolute;
+   top:-40%;
+   right:200px;
+   font-size:90px;
+   color:red;
+ }
+ #carouselReview .owl-next{
+    position: absolute;
+    top:-40%;
+   right:150px;
     font-size:90px;
      height:10px;
-   color:blue;
+   color:red;
  }
- /* #course_P .owl-dots .owl-dot{
-   position: absolute;
-   top:100%;
-   left:50%;
-  height:20px;
-  width: 30px;
-
-border: 1px solid green;
- } */
- .owl-dots{
-   text-align: center;
-
- }
- #course_P .owl-dot{
-  width: 30px;height:5px;
-  background: blue;
-  margin-right:20px;
- }
- /* #course_P .owl-dot .active{
-  
-  background: #e09422;
-  margin-right:20px;
- } */
- /* .owl-dots .owl-dot .active{
-  background: #e09422;
-  width: 30px;
-  height:5px;
-  transition: all 0.5s;
-  
-} */
-
- /* .owl-dots .owl-dot  {
-  background: #e09422;
-  font-size:30px;
-  width: 30px;
-  height:5px;
-} */
-/* .owl-dots .owl-dot .active span {
-  background: #e09422;
-  font-size:30px;
-  width: 30px;
-  height:5px;
-}
-.owl-dots .owl-dot span {
-  background: #e09422;
-  font-size:30px;
-  width: 30px;
-  height:5px;
-} */
+  */

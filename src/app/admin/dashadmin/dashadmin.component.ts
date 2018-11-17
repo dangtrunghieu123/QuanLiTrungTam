@@ -4,6 +4,7 @@ import { Course } from '../../Model/course';
 import { User } from '../../Model/user';
 import $ from 'jquery';
 import { RightToLeftAnimation } from '../../animation/righttoleft.animation';
+import { UserService } from '../../service/user.service';
 declare var $:any;
 @Component({
   selector: 'app-dashadmin',
@@ -17,7 +18,7 @@ public listCourse:Course[] = [];
 public listUser:User[] = [];
 p: number = 1;
 q: number = 1;
-  constructor(private courseSV: CourseService) { }
+  constructor(private courseSV: CourseService,private userSV:UserService) { }
 GetListCourse(){
   this.courseSV.getListCourse().subscribe(
     (result) => {
@@ -39,7 +40,7 @@ GetListCourse(){
 }
 
 GetListUser(){
-  this.courseSV.getListUser().subscribe(
+  this.userSV.getListUser().subscribe(
     (result) => {
       
       for(let i in result){

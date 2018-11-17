@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../../Model/user';
 import { CourseService } from '../../service/course.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../service/user.service';
 declare var particlesJS: any;
 @Component({
   selector: 'app-loginadmin',
@@ -15,7 +16,7 @@ export class LoginadminComponent implements OnInit {
   public TaiKhoan: FormControl;
   public MatKhau: FormControl;
   public listTeacher: User[] = [];
-  constructor(private user: CourseService,private router: Router) { }
+  constructor(private userSV:UserService,private router: Router) { }
 
   createFormLogin() {
     this.formLogin = new FormGroup({
@@ -153,7 +154,7 @@ export class LoginadminComponent implements OnInit {
   }
 
   GetListTeacher() {
-    this.user.getListUser().subscribe(
+    this.userSV.getListUser().subscribe(
       (result) => {
         // console.log(result);
         for (let i in result) {

@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { slideToLeftAnimation } from '../../animation/slide-to-left.animation';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import $ from 'jquery';
-import { CourseService } from '../../service/course.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../../Model/user';
+import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
-declare var $: any;
-declare var swal: any;
+import $ from 'jquery';
+declare var $:any;
+declare var swal:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +14,7 @@ declare var swal: any;
   animations: [slideToLeftAnimation],
   host: { '[@slideToLeftAnimation]': '' }
 })
-export class LoginComponent implements OnInit, AfterViewInit {
+export class LoginComponent implements OnInit,AfterViewInit {
   public formLogin: FormGroup;
   public formReg: FormGroup;
   public TaiKhoan: FormControl;
@@ -26,20 +26,20 @@ export class LoginComponent implements OnInit, AfterViewInit {
   public listUser: User[] = [];
   public user: User = new User();
   public a: string = "";
-  constructor(private userLogin: CourseService, private router: Router) { }
-
+  constructor(private userLogin:UserService,private router:Router) { }
 
   public CreateFormLogin() {
     this.formLogin = new FormGroup({
       TaiKhoan: new FormControl(),
       MatKhau: new FormControl()
     })
-
   }
+
   public CreateValiateFormLogin() {
     this.TaiKhoan = new FormControl(" ", [Validators.required]),
       this.MatKhau = new FormControl(" ", [Validators.required, Validators.minLength(5), Validators.maxLength(20)])
   }
+
   public CreateFormReg() {
     this.formReg = new FormGroup({
       TaiKhoan: new FormControl(),
@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
       Email: new FormControl(),
       SoDT: new FormControl()
     })
-
   }
+  
   public CreateValiateFormRegistration() {
     {
       this.TaiKhoan = new FormControl(" ", [Validators.required]),
@@ -103,23 +103,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
     )
 
   }
-  // GetListUser() {
-  //   this.userLogin.getListUser().subscribe(
-  //     (result) => {
-  //       for (let i in result) {
-  //         if (result[i].MatKhau != null && result[i].MatKhau != "" && result[i].TaiKhoan != null && result[i].TaiKhoan != "" && result[i].MaLoaiNguoDung != 'GV') {
-  //           this.listUser.push(result[i]);
-  //           // console.log(result[i].MaLoaiNguoDung);
-
-  //         }
-  //       }
-  //       console.log(this.listUser);
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   )
-  // }
 
   RegistrationSubmit() {
     console.log(this.formReg.value);
@@ -129,7 +112,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.user.HoTen = this.formReg.value.HoTen;
     this.user.SoDT = this.formReg.value.SoDT;
     this.user.MaLoaiNguoDung = "HV";
-    this.user.TenLoaiNguoiDung = "Học Viên";
+    // this.user.TenLoaiNguoiDung = "Học Viên";
     console.log(this.user);
     // for (let i in this.listUser) {
     //   console.log(this.listUser[i].TaiKhoan);
@@ -157,6 +140,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
           }
           else {
             console.log("ljdsljlj");
+            this.formReg.reset();
+            // this.router.navigate(['/']);
            
             // this.userLogin.Register(this.user).subscribe(
             //   (result) => {
@@ -183,6 +168,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     )
     this.formReg.reset();
   }
+
   register() {
     this.userLogin.Register(this.user).subscribe(
       (result) => {
@@ -200,17 +186,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       }
     )
   }
-  label() {
-    $('.txtF').change(function () {
-      if ($(this).val()) {
-        console.log($(this).val());
-        console.log("thu dien");
-        $(this).siblings('label').hide();
-      } else {
-        $(this).siblings('label').show();
-      }
-    })
-  }
+
 
   ngOnInit() {
     this.CreateFormLogin();
@@ -220,14 +196,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
     // this.RegistrationSubmit();
     // this.login(this.user);
     // this.GetListUser();
-    
   }
-  ngAfterViewInit() {
-    //this.label();
+
+  ngAfterViewInit(){
     this.RegistrationSubmit();
-   
   }
 }
-
-
-// importon: If have value, display label;

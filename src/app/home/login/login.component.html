@@ -1,118 +1,118 @@
-<section class="lg">
-    <div class="container">
-        <h1 class=" text-primary">Well come to our Class</h1>
-        <p class="text-center" style="color:gray;font-size:20px">Professional Creative and Dynamic</p>
-        <div class="Form mt-4">
-            <div class="in_out text-center">
-                <button class="btn btn-primary px-5 mr-3" (click)="show()">Login</button>
-                <button class="btn btn-success px-4 " (click)="hide() ">Registration</button>
+<section class="lg" style="z-index: 200px;">
+  <div class="container">
+      <h1 class=" text-primary">Well come to our Class</h1>
+      <p class="text-center" style="color:gray;font-size:20px">Professional Creative and Dynamic</p>
+      <div class="Form mt-4">
+          <div class="in_out text-center">
+              <button class="btn btn-primary px-5 mr-3" (click)="show()">Login</button>
+              <button class="btn btn-success px-4 " (click)="hide() ">Registration</button>
 
-            </div>
-            <form action="" class="" [formGroup]="formLogin" *ngIf="status;else formRegistration">
-                <div class="img">
-                    <img src="../../../assets/img/login.jpg" alt="">
-                    <div class="hoverImg">
-                        <h1>Hello you</h1>
-                    </div>
-                </div>
-                <div class="form-group mx-4 account mt-5">
-                    <label for="">Account</label>
-                    <input type="text" formControlName="TaiKhoan" class="txtF form-control" required>
-                    <div *ngIf="formLogin.get('TaiKhoan').invalid && formLogin.get('TaiKhoan').touched">
-                        <div *ngIf="formLogin.get('TaiKhoan').errors['required']" class="alert alert-danger">
-                            please check your account again
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mx-4 pass ">
-                    <label for="">PassWord</label>
-                    <input type="password" class=" txtF form-control" id="test" formControlName="MatKhau" required minlength="5" maxlength="20">
-                    <div *ngIf="formLogin.get('MatKhau').invalid && formLogin.get('MatKhau').touched">
-                        <div *ngIf="formLogin.get('MatKhau').errors['required']" class="alert alert-danger">
-                            please check your password again
-                        </div>
-                        <div *ngIf="formLogin.get('MatKhau').errors['minlength'] " class="alert alert-danger">
-                            Password minimum 5 character
-                        </div>
-                        <div *ngIf=" formLogin.get('MatKhau').errors['maxlength']" class="alert alert-danger">
-                            Password maximum 20 character
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group text-center">
-                    <button type="button" class="btn btn-danger px-4 my-3" (click)="LoginSubmit()">Login</button>
-                    <button class="btn btn-warning" routerLink="/">Cancel</button>
-                </div>
-            </form>
-            <ng-template #formRegistration>
-                <form action="" class="formReg" [formGroup]="formReg">
-                    <div class="form-group mx-4 account mt-5">
-                        <label for="">Account</label>
-                        <input type="text" formControlName="TaiKhoan" class="txtF form-control" required>
-                        <div *ngIf="formReg.get('TaiKhoan').invalid && formReg.get('TaiKhoan').touched">
-                            <div *ngIf="formReg.get('TaiKhoan').errors['required']" class="alert alert-danger">
-                                please check your account again
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mx-4 pass ">
-                        <label for="">PassWord</label>
-                        <input type="password" class=" txtF form-control" formControlName="MatKhau" required minlength="5" maxlength="20">
-                        <div *ngIf="formReg.get('MatKhau').invalid && formReg.get('MatKhau').touched">
-                            <div *ngIf="formReg.get('MatKhau').errors['required']" class="alert alert-danger">
-                                please check your password again
-                            </div>
-                            <div *ngIf="formReg.get('MatKhau').errors['minlength'] " class="alert alert-danger">
-                                Password minimum 5 character
-                            </div>
-                            <div *ngIf=" formReg.get('MatKhau').errors['maxlength']" class="alert alert-danger">
-                                Password maximum 20 character
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mx-4 name ">
-                        <label for="">Name</label>
-                        <input type="text" formControlName="HoTen" class="txtF form-control">
-                        <div *ngIf="formReg.get('HoTen').invalid && formReg.get('HoTen').touched">
-                            <div *ngIf="formReg.get('HoTen').errors['required']" class="alert alert-danger">
-                                please check your name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mx-4 email">
-                        <label for="">Email</label>
-                        <input type="email" formControlName="Email" class="txtF form-control" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
-                        <div *ngIf="formReg.get('Email').invalid && formReg.get('Email').touched">
-                            <div *ngIf="formReg.get('Email').errors['required']" class="alert alert-danger">
-                                please check your name
-                            </div>
-                            <div *ngIf="formReg.get('Email').errors['pattern']" class="alert alert-danger">
-                                please check 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mx-4 phone ">
-                        <label for="">PhoneNumber</label>
-                        <input type="text" class="txtF form-control" formControlName="SoDT">
+          </div>
+          <form action="" class="" [formGroup]="formLogin" *ngIf="status;else formRegistration">
+              <div class="img">
+                  <img src="../../../assets/image/login.jpg" alt="">
+                  <div class="hoverImg">
+                      <h1>Hello you</h1>
+                  </div>
+              </div>
+              <div class="form-group mx-4 account mt-5">
+                  <label for="">Account</label>
+                  <input type="text" formControlName="TaiKhoan" class="txtF form-control" required>
+                  <div *ngIf="formLogin.get('TaiKhoan').invalid && formLogin.get('TaiKhoan').touched">
+                      <div *ngIf="formLogin.get('TaiKhoan').errors['required']" class="alert alert-danger">
+                          please check your account again
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group mx-4 pass ">
+                  <label for="">PassWord</label>
+                  <input type="password" class=" txtF form-control" id="test" formControlName="MatKhau" required minlength="5" maxlength="20">
+                  <div *ngIf="formLogin.get('MatKhau').invalid && formLogin.get('MatKhau').touched">
+                      <div *ngIf="formLogin.get('MatKhau').errors['required']" class="alert alert-danger">
+                          please check your password again
+                      </div>
+                      <div *ngIf="formLogin.get('MatKhau').errors['minlength'] " class="alert alert-danger">
+                          Password minimum 5 character
+                      </div>
+                      <div *ngIf=" formLogin.get('MatKhau').errors['maxlength']" class="alert alert-danger">
+                          Password maximum 20 character
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group text-center">
+                  <button type="button" class="btn btn-danger px-4 my-3" (click)="LoginSubmit()">Login</button>
+                  <button class="btn btn-warning" routerLink="/">Cancel</button>
+              </div>
+          </form>
+          <ng-template #formRegistration>
+              <form action="" class="formReg" [formGroup]="formReg">
+                  <div class="form-group mx-4 account mt-5">
+                      <label for="">Account</label>
+                      <input type="text" formControlName="TaiKhoan" class="txtF form-control" required>
+                      <div *ngIf="formReg.get('TaiKhoan').invalid && formReg.get('TaiKhoan').touched">
+                          <div *ngIf="formReg.get('TaiKhoan').errors['required']" class="alert alert-danger">
+                              please check your account again
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group mx-4 pass ">
+                      <label for="">PassWord</label>
+                      <input type="password" class=" txtF form-control" formControlName="MatKhau" required minlength="5" maxlength="20">
+                      <div *ngIf="formReg.get('MatKhau').invalid && formReg.get('MatKhau').touched">
+                          <div *ngIf="formReg.get('MatKhau').errors['required']" class="alert alert-danger">
+                              please check your password again
+                          </div>
+                          <div *ngIf="formReg.get('MatKhau').errors['minlength'] " class="alert alert-danger">
+                              Password minimum 5 character
+                          </div>
+                          <div *ngIf=" formReg.get('MatKhau').errors['maxlength']" class="alert alert-danger">
+                              Password maximum 20 character
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group mx-4 name ">
+                      <label for="">Name</label>
+                      <input type="text" formControlName="HoTen" class="txtF form-control">
+                      <div *ngIf="formReg.get('HoTen').invalid && formReg.get('HoTen').touched">
+                          <div *ngIf="formReg.get('HoTen').errors['required']" class="alert alert-danger">
+                              please check your name
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group mx-4 email">
+                      <label for="">Email</label>
+                      <input type="email" formControlName="Email" class="txtF form-control" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                      <div *ngIf="formReg.get('Email').invalid && formReg.get('Email').touched">
+                          <div *ngIf="formReg.get('Email').errors['required']" class="alert alert-danger">
+                              please check your name
+                          </div>
+                          <div *ngIf="formReg.get('Email').errors['pattern']" class="alert alert-danger">
+                              please check 
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group mx-4 phone ">
+                      <label for="">PhoneNumber</label>
+                      <input type="text" class="txtF form-control" formControlName="SoDT">
 
-                    </div>
+                  </div>
 
-                    <!-- <div class="form-group mx-4 codeUser mt-4">
-                        <input type="text" class=" " formControlName="codeUser">
-                        <label for="">CodeUser</label>
-                    </div>
-                    <div class="form-group mx-4 MaLoaiNguoiDung mt-4">
-                        <input type="text" class=" " formControlName="MaLoaiNguoiDung">
-                        <label for="">MaLoaiNguoiDung</label>
-                    </div>  -->
-                    <div class="form-group text-center">
-                        <button type="button" (click)="RegistrationSubmit()" class="btn btn-danger px-4 my-3">Registration</button>
-   
-                        <button class="btn btn-warning" routerLink="/">Cancel</button>
-                    </div>
-                </form>
-            </ng-template>
+                  <!-- <div class="form-group mx-4 codeUser mt-4">
+                      <input type="text" class=" " formControlName="codeUser">
+                      <label for="">CodeUser</label>
+                  </div>
+                  <div class="form-group mx-4 MaLoaiNguoiDung mt-4">
+                      <input type="text" class=" " formControlName="MaLoaiNguoiDung">
+                      <label for="">MaLoaiNguoiDung</label>
+                  </div>  -->
+                  <div class="form-group text-center">
+                      <button type="button" (click)="RegistrationSubmit()" class="btn btn-danger px-4 my-3">Registration</button>
+ 
+                      <button class="btn btn-warning" routerLink="/">Cancel</button>
+                  </div>
+              </form>
+          </ng-template>
 
-        </div>
-    </div>
+      </div>
+  </div>
 </section>

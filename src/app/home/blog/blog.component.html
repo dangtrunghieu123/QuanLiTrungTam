@@ -1,0 +1,36 @@
+<section id="bg">
+  <div>
+    <div class="title">
+      <h1>CyberSoft Academy</h1>
+      <p>Create to success</p>
+    </div>
+  </div>
+</section>
+
+<section class="blog">
+  <div class="container">
+    <div class="Tittle_blog">
+      <h1>Blog</h1>
+    </div>
+    <div class="row">
+      <div class="col-6 my-3" *ngFor="let blog of listBlog">
+        <div class="row">
+          <div class="col-4">
+            <img [src]="blog.src" class="img-fluid">
+          </div>
+          <div class="col-8">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, dolor!</p>
+            <p style="color:blueviolet;font-size:30px">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

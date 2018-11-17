@@ -5,5 +5,4 @@ export class Course{
     public HinhAnh:string;
     public LuotXem: string;
     public NguoiTao:string;
-    public MaLoaiNguoiDung:string;
 }

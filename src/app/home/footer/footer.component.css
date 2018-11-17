@@ -1,152 +1,60 @@
-/* .Top{
-    border-top:2px solid black;
-} */
-.on button{
-
-   border-radius: 25px;
-   border: none;
-   outline: none;
-   padding: 10px 20px;
-   color:red;
-   font-size:20px;
-   background-position: right center;
-   background-image: linear-gradient(to top left, #00FF00 0%, #FFFF00 51%, #00FF00 100%);
-}
-.on button:hover{
-   background-position: right center;
-   background-image: linear-gradient(to top right, #00FF00 0%, #FFFF00 51%, #00FF00 100%);
-}
-.on h3{
-   font-weight: 20;
-}
 
 
-/* under */
-.under p{
-   font-size:20px;
-}
-.left p span i{
-   text-align: center;
-   /* padding:10px 15px; */
-   background: orange;
-   border-radius: 50%;
-}
-.left a{
-   color:white;
-}
-.left p span:last-child{
-   position: relative;
-}
-.left p span:last-child:after{
-   content:'';
-   position: absolute;
-   top:50%;
-   left:0;
-   width:0;
-   height:2px;
-   background: orange;
-}
-.left p span:last-child:hover{
-   color:orange;
-   padding-left:35px;
-   transition:all 1s;
-}
-.left p span:last-child:hover:after{
-   color:orange;
-   padding-left:30px;
-   transition:all 1s;
-   width: 20px;
-}
-.left p span:hover a{
-   color:orange;
-}
-
-.center span i{
-   margin-top:10px;
-   font-size:30px;
-   color:orange;
-   text-align: center;
-   /* padding:10px 15px; */
-}
-.center a{
-   font-size:25px;
-   color:white;
-   text-decoration: none;
-}
-.ct{
-   position: relative;
-}
-.ct:after{
-   content:'';
-   position: absolute;
-   top:50%;
-   left:0;
-   width:0;
-   height:2px;
-   background: orange
-}
-.ct:hover a{
-   color:orange;
-   padding-left:30px;
-   transition:all 1s;
-}
-.ct:hover:after{
-   color:orange;
-   
-   transition:all 1s;
-   width: 25px;
-}
+ .under{
+     background:rgba(5, 5, 245,0.3);
+     background-size:cover;
+     background-position: center;
+ }
 
 
-.right span i{
-   margin-top:10px;
-   font-size:30px;
-   color:orange;
-   text-align: center;
-   /* padding:10px 15px; */
-}
-.right a{
-   font-size:25px;
-   color:white;
-   text-decoration: none;
-}
-.star span:hover i{
-  
-   animation: rotate1 2s linear infinite;
-}
-@keyframes rotate1 {
-   0%{
-       transform: scale(0.4);
-   }
-   100%{
-       transform: scale(1.6);
-   }
-}
-.footer2{
-    display: none;
-}
-.RightFooter2 .resIcon{
+ /* center */
+ .center .form{
+     text-align: center;
+ }
+ .example-container > * {
+    width: 80%;
+  }
+
+  .center .social{
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-.RightFooter2 .resIcon p{
-    border: 1px solid yellow;
-}
-.LeftFooter2 .ct a{
+  }
+  .center .social p{
+      padding:5px 20px;
+      font-size:30px;
+      /* border:1px solid red; */
+      color:white;
+      background: blue;
+  }
+  .center h1,.left h1,.right h1{
+    text-align:center;
     color:white;
-    text-decoration: none;
-    font-size:25px;
-}
-.LeftFooter2 .star i{
-    font-size:25px;
-}
-/* responsive */
-@media screen and (max-width: 800px){
-    .footer2{
-        display: block;
-    }
-    .footer1{
-        display: none;
-    }
-}
+    font-weight: 100;
+    background:green;
+    margin:10px 0;
+    border-radius:10px;
+ }
+
+ /* left */
+ .left .contact i{
+     font-size:30px;
+ }
+ .left .contact span{
+     /* color:white; */
+     font-size:20px;
+ }
+ .left{
+     color:black;
+     line-height: 20px;
+     
+ }
+ /* produceBy */
+ .produceBy{
+     background: black;
+     text-align: center;
+     font-size:30px;
+     color:gray;
+     padding:5px 0;
+ }
+ 

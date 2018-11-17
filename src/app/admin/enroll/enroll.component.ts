@@ -3,6 +3,7 @@ import { CourseService } from '../../service/course.service';
 import { User } from '../../Model/user';
 import { Course } from '../../Model/course';
 import { FormGroup, FormControl } from '@angular/forms';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-enroll',
@@ -15,9 +16,9 @@ public listCourse:Course[] =[];
 public formListCourse:FormGroup;
 public MaKhoaHoc: FormControl;
 p:number = 1;
-  constructor(private courseSV: CourseService) { }
+  constructor(private courseSV: CourseService,private userSV:UserService) { }
   GetListUser(){
-    this.courseSV.getListUser().subscribe(
+    this.userSV.getListUser().subscribe(
       (result) => {
         
         for(let i in result){
@@ -59,6 +60,8 @@ createEnroll(){
     this.courseSV.EnrollCourse(ACCOUNT,codeCourse).subscribe(
       (result) => {
         console.log(result);
+        alert(result);
+        
       },
       (error) => {
         console.log(error);

@@ -3,6 +3,7 @@ import { CourseService } from '../../service/course.service';
 import { User } from '../../Model/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import $ from 'jquery';
+import { UserService } from '../../service/user.service';
 declare var $: any;
 declare var swal: any;
 @Component({
@@ -22,9 +23,9 @@ export class ManageuserComponent implements OnInit {
   public SoDT: FormControl;
   public user: User = new User();
   public MaLoaiNguoiDung: FormControl;
-  constructor(private courseSV: CourseService) { }
+  constructor(private userSV:UserService) { }
   GetListUser() {
-    this.courseSV.getListUser().subscribe(
+    this.userSV.getListUser().subscribe(
       (result) => {
 
         for (let i in result) {
@@ -68,27 +69,27 @@ export class ManageuserComponent implements OnInit {
   //add user
   addUser() {
     console.log(this.formAddUser.value);
-    this.user.TaiKhoan = this.formAddUser.value.TaiKhoan;
-    this.user.MatKhau = this.formAddUser.value.MatKhau;
-    this.user.Email = this.formAddUser.value.Email;
-    this.user.HoTen = this.formAddUser.value.HoTen;
-    this.user.SoDT = this.formAddUser.value.SoDT;
-    this.user.MaLoaiNguoDung = this.formAddUser.value.MaLoaiNguoiDung;
-    if (this.formAddUser.value.MaLoaiNguoDung === "HV ") {
-      this.user.TenLoaiNguoiDung = "Học Viên";
-    }
-    else if (this.formAddUser.value.MaLoaiNguoDung === "GV") {
-      this.user.TenLoaiNguoiDung = "Giáo Vụ";
-    }
+    // this.user.TaiKhoan = this.formAddUser.value.TaiKhoan;
+    // this.user.MatKhau = this.formAddUser.value.MatKhau;
+    // this.user.Email = this.formAddUser.value.Email;
+    // this.user.HoTen = this.formAddUser.value.HoTen;
+    // this.user.SoDT = this.formAddUser.value.SoDT;
+    // this.user.MaLoaiNguoDung = this.formAddUser.value.MaLoaiNguoiDung;
+    // if (this.formAddUser.value.MaLoaiNguoDung === "HV ") {
+    //   this.user.TenLoaiNguoiDung = "Học Viên";
+    // }
+    // else if (this.formAddUser.value.MaLoaiNguoDung === "GV") {
+    //   this.user.TenLoaiNguoiDung = "Giáo Vụ";
+    // }
     console.log(this.user);
     for (let i in this.listUser) {
       if (this.listUser[i].TaiKhoan === this.formAddUser.value.TaiKhoan) {
         alert("Account readly exist!");
       }
       else{
-        this.courseSV.addUser(this.user).subscribe(
+        this.userSV.addUser(this.formAddUser.value).subscribe(
           (result) => {
-            this.listUser.push(this.user);
+            this.listUser.push(result);
             console.log(result);
             console.log(this.user);
             swal({
@@ -98,7 +99,7 @@ export class ManageuserComponent implements OnInit {
               timer: 1500
             })
             
-            // window.location.reload();
+            window.location.reload();
           },
           (error) => {
             console.log(error);
@@ -128,12 +129,12 @@ export class ManageuserComponent implements OnInit {
   }
   editUser() {
     console.log(this.formEditUser.value);
-    this.courseSV.editUser(this.formEditUser.value).subscribe(
+    this.userSV.editUser(this.formEditUser.value).subscribe(
       (result) => {
         console.log(result);
         swal({
           type: 'success',
-          title: 'Enroll course successfully',
+          title: 'add user successfully',
           showConfirmButton: false,
           timer: 1500
         })
@@ -149,7 +150,7 @@ export class ManageuserComponent implements OnInit {
   }
   DELETE(val){
     console.log(val);
-    this.courseSV.deleteUser(val).subscribe(
+    this.userSV.deleteUser(val).subscribe(
       (result) => {
         console.log(result);
         for(let index in this.listUser){
@@ -159,7 +160,7 @@ export class ManageuserComponent implements OnInit {
         }
         swal({
           type: 'success',
-          title: 'Enroll course successfully',
+          title: 'delete user successfully',
           showConfirmButton: false,
           timer: 1500
         })

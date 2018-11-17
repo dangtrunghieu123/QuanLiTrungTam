@@ -1,27 +1,56 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomelayoutComponent } from './homelayout/homelayout.component';
-import { Header1Component } from './header1/header1.component';
+import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
-import { ListcourseComponent } from './listcourse/listcourse.component';
-import { ListpromotionComponent } from './listpromotion/listpromotion.component';
-import { CourseitemComponent } from './courseitem/courseitem.component';
-import { PromotionitemComponent } from './promotionitem/promotionitem.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-
+import { CourseComponent } from './course/course.component';
+import { ListcourseComponent } from './listcourse/listcourse.component';
+import { PromotionComponent } from './promotion/promotion.component';
+import { ListpromotionComponent } from './listpromotion/listpromotion.component';
+import { BlogComponent } from './blog/blog.component';
 import { RouterModule } from '@angular/router';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatSlideToggleModule
+} from '@angular/material';
+import { LoginComponent } from './login/login.component';
 import { DetailcourseComponent } from './detailcourse/detailcourse.component';
-import { ShareModule } from '../share/share.module';
 import { DetailuserComponent } from './detailuser/detailuser.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
-    CommonModule,ShareModule,RouterModule,BrowserAnimationsModule,ReactiveFormsModule,FormsModule
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatSlideToggleModule
   ],
-  exports:[HomelayoutComponent, Header1Component, SliderComponent, ListcourseComponent, ListpromotionComponent, CourseitemComponent, PromotionitemComponent, FooterComponent, LoginComponent,  DetailcourseComponent, DetailuserComponent],
-  declarations: [HomelayoutComponent, Header1Component, SliderComponent, ListcourseComponent, ListpromotionComponent, CourseitemComponent, PromotionitemComponent, FooterComponent, LoginComponent, DetailcourseComponent, DetailuserComponent]
+  exports: [HomelayoutComponent, HeaderComponent, SliderComponent, FooterComponent, CourseComponent, ListcourseComponent, PromotionComponent, ListpromotionComponent, BlogComponent, LoginComponent, DetailcourseComponent, DetailuserComponent],
+  declarations: [HomelayoutComponent, HeaderComponent, SliderComponent, FooterComponent, CourseComponent, ListcourseComponent, PromotionComponent, ListpromotionComponent, BlogComponent, LoginComponent, DetailcourseComponent, DetailuserComponent]
 })
 export class HomeModule { }

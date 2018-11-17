@@ -1,0 +1,50 @@
+
+#bg{
+    /* margin-top:-35px; */
+    background: url("../../../assets/image/keyboard.jpg");
+    height: 350px;
+    width: 100%;
+    background-attachment: fixed;
+    background-size:cover;
+}
+#bg > div{
+    background:rgba(0,0,0,0.5);
+    height:100%;
+    position: relative;
+}
+#bg > div .title{
+    position: absolute;
+    top:30%;
+    left:30%;
+    color:white;
+}
+#bg > div .title h1{
+    font-size:35px;
+    letter-spacing: 20px;
+
+}
+#bg > div .title p{
+    font-size:30px;
+    font-weight:100;
+}
+.Tittle_blog{
+    
+    position: relative;
+}
+.Tittle_blog h1{
+    text-align: center;
+    font-size:45px;
+    font-weight:100;
+    margin:25px 0;
+}
+.Tittle_blog:after{
+    
+    text-align: center;
+    content: '';
+    position: absolute;
+    top:150%;
+    left:0;
+    width: 20%;
+    height: 2px;
+    background: blue;
+}

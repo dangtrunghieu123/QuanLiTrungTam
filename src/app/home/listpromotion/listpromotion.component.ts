@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import $ from 'jquery';
 import { CourseService } from '../../service/course.service';
-import { Course } from '../../Model/course';
-import $ from'jquery'
+import { Course } from '../../model/course';
 declare var $:any;
 @Component({
   selector: 'app-listpromotion',
@@ -9,33 +9,30 @@ declare var $:any;
   styleUrls: ['./listpromotion.component.css']
 })
 export class ListpromotionComponent implements OnInit {
-  public list:Course[]=[];
-  constructor(private CourseList:CourseService) { }
-  getList(){
-    this.CourseList.getListCourse().subscribe(
+  public list:Course[] = [];
+  constructor(private courseSV:CourseService) { }
+  GetListCourse(){
+    this.courseSV.getListCourse().subscribe(
       (result) => {
         console.log(result);
         for(let i in result){
-          if(result[i].HinhAnh != null && result[i].MaKhoaHoc !=""){
+          if(result[i].HinhAnh != null && result[i].HinhAnh != ""){
             this.list.push(result[i]);
-            console.log(this.list);
           }
         }
         setTimeout(()=>{
           this.showOwlCarousel();
-        },100)
-      },
-      (error) => {
-        console.log(error);
+        },100);
+        console.log(this.list);
       }
     )
   }
+
   showOwlCarousel(){
     $('#course_Pa').owlCarousel({
       loop:true,
       margin:10,
       // nav:true,
-     
       autoplay:true,
       autoplayTimeout:3000,
       autoplayHoverPause:true,
@@ -53,7 +50,7 @@ export class ListpromotionComponent implements OnInit {
     })
   }
   ngOnInit() {
-    this.getList();
+    this.GetListCourse();
   }
 
 }

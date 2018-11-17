@@ -1,22 +1,55 @@
-<section class="listCourse">
-  <div class="container Content">
-    <div class="Course">
-      <div class="row row1">
-        <div class="col-12">
-          <h1>LIST COURSE</h1>
-        </div>
+<section>
+  <div class="container">
+    <div class="row skill">
+      <div class="col-3">
+        <img src="../../../assets/image/code-flat.png">
+        <p>Code Skills</p>
       </div>
-      <div class="owl-carousel" id="course_P">
-        <div *ngFor="let Course of list">
-          <div class="item">
-            <app-courseitem [itemCourse]="Course"></app-courseitem>
-          </div>
-        </div>
+      <div class="col-3">
+        <img src="../../../assets/image/html.jpg">
+        <p>HTML Skills</p>
+      </div>
+      <div class="col-3">
+        <img src="../../../assets/image/js1.png" style="width:200px;height:160px;">
+        <p>Javascript Skill</p>
+      </div>
+      <div class="col-3">
+        <img src="../../../assets/image/angular.png">
+        <p>Angular Skill</p>
       </div>
     </div>
   </div>
 </section>
 
-<section >
-  <div class="backGround"> </div>
+<section>
+  <div class="container">
+    <div class="Tittle">
+      <h1>Course</h1>
+    </div>
+    <div class="row mt-5">
+      <div class="col-4 left pr-5">
+        <h2>About courses</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sequi asperiores totam quo dolor similique doloremque
+          recusandae pariatur harum doloribus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, odio! Illo id reiciendis distinctio minima magnam?
+          Labore rerum consectetur tenetur.</p>
+        <div class="">
+          <button class="btn btn-primary">View all</button>
+        </div>
+      </div>
+      <div class="col-8 right "  style="z-index: 0;">
+        <div class="Content ">
+          <div class="Course ">
+            <div class="owl-carousel" id="course_P">
+              <div *ngFor="let Course of list">
+                <div class="item">
+                  <app-course [itemCourse]="Course"></app-course>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
