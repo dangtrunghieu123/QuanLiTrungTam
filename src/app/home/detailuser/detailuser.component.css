@@ -1,0 +1,189 @@
+.Content{
+    background: #CCFFFF;
+    padding: 30px;
+}
+/* left */
+.left img{
+    width: 100%;
+    height: 350px;
+}
+.left .clip:after,.left .clip:before{
+    z-index: 200;
+    position: absolute;
+    top:-15px;
+    left:0px;
+    content:'';
+    height:380px;
+    width:100%;
+    border:3px solid blue;
+    animation: clipMe 8s linear infinite;
+}
+.left .clip:after{
+    animation-delay: -3s;
+ }
+ 
+   @keyframes clipMe {
+     0%, 100% {
+       clip: rect(0px, 380px, 2px, 0px);
+     }
+     25% {
+       clip: rect(0px, 2px, 380px, 0px);
+     }
+     50% {
+       clip: rect(218px, 380px, 380px, 0px);
+     }
+     75% {
+       clip: rect(0px, 380px, 380px, 218px);
+     }
+   }
+  
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+   }
+.left .top{
+    margin-top:20px;
+}
+.left .top p{
+    font-size:30px;
+    line-height:20px;
+}
+.left .bottom{
+    margin-top:30px;
+    font-size:30px;
+}
+.left .bottom .info i, .left .bottom .course i {
+    margin-right:20px;
+    color:#464de4;
+}
+.left .bottom .info {
+    /* font-size:30px; */
+    /* background: blue; */
+    border:2px solid blue;
+    color:blue;
+}
+.left .bottom .course {
+    margin-top:20px;
+    color:green;
+    border:2px solid green;
+    cursor: pointer;
+
+}
+.left .bottom .info:hover{
+    background: blue;
+    color:white;
+    cursor: pointer;
+}
+.left .bottom .info:hover i{
+    color:white;
+}
+.left .bottom .course:hover{
+    background: green;
+    color:white;
+}
+.left .bottom .course:hover i{
+    color:white;
+}
+
+/*right*/
+.right .SomeInfor h1, .right .SomeCourse h1{
+    text-align:center;
+    font-weight:200;
+    border-top:1px solid green;
+    border-bottom:1px solid green;
+    padding:10px 0;
+    color:blue;
+}
+.right .SomeInfor h1:hover,.right .SomeCourse h1:hover{
+    color:white;
+    background:blueviolet;
+}
+.right .SomeInfor .Main_info{
+    font-size:25px;
+    color:gray;
+    line-height: 5px;
+}
+.right .SomeInfor .Main_info i{
+    color:#464de4;
+    padding:0 20px;
+}
+.right .SomeInfor .Main_info p:last-child{
+    font-size:20px;
+    line-height: 20px;
+    padding-left:20px;
+    padding-top:20px;
+}
+.right .SomeInfor .contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width:50%;
+    margin:auto;
+    padding-bottom:30px;
+}
+.right .SomeInfor .contact i{
+    font-size:40px;
+    color:white;
+}
+
+/* animation */
+.leftToRight{
+    animation: leftRight 1s ease-in-out;
+}
+@keyframes leftRight{
+    0%{
+        transform: translateX(-1000px);
+
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.SomeInfor h1{
+    animation:rightLeft 2s ease-in-out;
+}
+@keyframes rightLeft{
+    0%{
+        transform: translateX(1000px);
+
+    }
+    50%{
+        transform: translateX(1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.SomeInfor .Main_info{
+    animation:leftToRight 3s ease-in-out;
+}
+@keyframes leftToRight{
+    0%{
+        transform: translateX(-2000px);
+
+    }
+    50%{
+        transform: translateX(-2000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.SomeInfor .divContact{
+    animation:rightToLeft 4s ease-in-out;
+}
+@keyframes rightToLeft{
+    0%{
+        transform: translateX(1000px);
+
+    }
+    80%{
+        transform: translateX(1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}

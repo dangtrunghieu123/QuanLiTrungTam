@@ -1,3 +1,59 @@
-<p>
-  detailcourse works!
-</p>
+<section class="detail">
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col-3 left">
+        <div class="card Card">
+          <img [src]="DetailCourse.HinhAnh">
+          <div class="card-body">
+
+            <h1 class=" text-primary">{{DetailCourse.TenKhoaHoc}}</h1>
+            <h3>Creator:</h3>
+            <h3> {{DetailCourse.NguoiTao}}</h3>
+            <p style="font-size:20px;color:gray">View {{DetailCourse.LuotXem}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 mx-auto">
+        <div class="right">
+          <h1>Some Information About This Course</h1>
+          <div class="">
+            <ul class="mt-3">
+              <li>
+                <i class="fa fa-check-square-o"></i>
+                <span> You are looking for the hottest job and the high salary now?</span>
+              </li>
+              <li>
+                <i class="fa fa-check-square-o"></i>
+                <span>You are looking for a new job under your passion?</span>
+              </li>
+              <li>
+                <i class="fa fa-check-square-o"></i>
+                <span>You want to start a new career for yourself but do not know where to start?</span>
+              </li>
+              <li>
+                <i class="fa fa-check-square-o"></i>
+                <span>
+                  You need a professional center, finished learning immediately, meet all the recruitment needs of the business ?
+                </span>
+              </li>
+              <li>
+                <p>
+                  <i class="fa fa-hand-o-right"></i>
+                  {{DetailCourse.MoTa}}</p>
+              </li>
+            </ul>
+            
+            <div class="text-center mt-2">
+              <button class="btn btn-primary" style="width: 100%; font-size:30px" type="button" (click)="Registration()">Registration now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</section>
+<section class="blur">
+    <img [src]="DetailCourse.HinhAnh">
+  </section>

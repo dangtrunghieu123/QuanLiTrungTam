@@ -1,4 +1,4 @@
-<div class="card mt-4" *ngIf="status" style="z-index: 0;">
+<div class="card mt-4" *ngIf="status" >
     <img [src]="itemCourse.HinhAnh" class="img-fluid">
     <div class="card-body ">
       <h4 class="nameCourse">
@@ -11,7 +11,7 @@
       <p>View  {{itemCourse.LuotXem}}</p>
       
       <!-- <button class="btn btn-success" style="width:100%" [routerLink]="['/detail',itemCourse.MaKhoaHoc]">View More</button> -->
-      <button class="btn text-white" style="width:100%;background:#660066">View More</button>
+      <button class="btn text-white" style="width:100%;background:#660066" [routerLink]="['/detail',itemCourse.MaKhoaHoc]">View More</button>
     </div>
   </div>
   

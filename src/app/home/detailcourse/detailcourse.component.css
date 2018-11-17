@@ -1,0 +1,119 @@
+.left{
+    
+    padding:0;
+}
+.left img{
+    width:100%;
+    height:300px;
+}
+.left .Card{
+    transition: 0.3s ease-in-out;
+    animation:bounceInLeft 1s linear;
+}
+@keyframes bounceInLeft{
+    0%{
+        transform: translate(-100px);
+    }
+   
+    100%{
+        transform: translate(0);
+    }
+}
+.left .Card:hover{
+    transform: translateY(-5px);
+    box-shadow: 6px 4px 4px #777;
+}
+
+
+.right{
+   
+    margin-right:20px;
+    width: 100%;
+    /* border:1px solid green; */
+}
+.right h1{
+    /* opacity: 0; */
+   
+    /* transform: translate(500px); */
+    padding:15px;
+    text-align: center;
+    border-top:2px solid green;
+    border-bottom:2px solid green;
+    animation:bounceInRight 2s linear;
+}
+@keyframes bounceInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    40%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.right >div{
+    color:white;
+    padding-left:20px;
+    border-left:2px solid green;
+    /* animation:BounceInLeft 2s linear; */
+}
+@keyframes BounceInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    40%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.right >div ul{
+    animation:BounceInLeft 2s linear;
+}
+.right >div ul li{
+    list-style:none;
+    font-size:20px;
+    line-height: 30px;
+}
+.right >div ul li i{
+    margin-right:10px;
+    color:orangered;
+}
+.right >div ul li p{
+    font-size:20px;
+}
+.right >div ul li p i{
+    font-size:30px;
+    color:blue;
+}
+.right >div >div{
+    animation:bounceInRight 2s linear;
+}
+
+
+.blur{
+    /* background: url('../../../assets/img/bg.jpg');
+   background-size:cover;
+   background-position: center; */
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    filter: blur(5px);
+    height:1000px;
+	width: 100%;
+}
+.blur img{
+    width: 100%;
+    height:100%;
+}
+
